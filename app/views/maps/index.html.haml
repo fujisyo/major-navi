@@ -1,0 +1,110 @@
+.header
+  .header__title
+    Harry Styles
+  .header__menu
+    =link_to "施設",""
+    -if user_signed_in?
+      =link_to new_map_path do
+        新規投稿
+      =link_to destroy_user_session_path do
+        ログアウト
+    -else
+      =link_to new_user_session_path do
+        ログイン
+      =link_to new_user_registration_path do
+        新規登録
+.main
+  .main__image
+    .main__image__back
+      .main__image__back__left
+        = image_tag "", class: "main__image__back__left__logo"
+      .main__image__back__right
+        Styles
+  .main__menu
+    %ul.main__menu__navi
+      %li.main__menu__navi__box
+        =link_to "検索", "", class: "main__menu__navi__box__t"
+        =link_to "チーム", "https://baseball.yahoo.co.jp/npb/teams/", class: "main__menu__navi__box__t"
+        =link_to "ルール", "https://www.sports-rule.com/baseball/", class: "main__menu__navi__box__t"
+  .main__map
+    .main__map__box
+      .main__map__box__image
+        .main__map__area
+          %ul.main__map__area__data
+            %li.main__map__area__data__list
+              .main__map__area__data__list__A
+                北海道エリア
+                = link_to "北海道", "", class: "main__map__area__data__list__A__a"
+              .main__map__area__data__list__B
+                東北エリア
+                = link_to "宮城", "", class: "main__map__area__data__list__B__b"
+                = link_to "青森", "", class: "main__map__area__data__list__B__b"
+                = link_to "岩手", "", class: "main__map__area__data__list__B__b"
+                = link_to "秋田", "", class: "main__map__area__data__list__B__b"
+                = link_to "山形", "", class: "main__map__area__data__list__B__b"
+                = link_to "福島", "", class: "main__map__area__data__list__B__b"
+              .main__map__area__data__list__C
+                関東エリア
+                = link_to "東京", "", class: "main__map__area__data__list__C__c"
+                = link_to "神奈川", "", class: "main__map__area__data__list__C__c"
+                = link_to "埼玉", "", class: "main__map__area__data__list__C__c"
+                = link_to "千葉", "", class: "main__map__area__data__list__C__c"
+                = link_to "茨城", "", class: "main__map__area__data__list__C__c"
+                = link_to "栃木", "", class: "main__map__area__data__list__C__c"
+                = link_to "群馬", "", class: "main__map__area__data__list__C__c"
+              .main__map__area__data__list__D
+                甲信越エリア
+                = link_to "新潟", "", class: "main__map__area__data__list__D__d"
+                = link_to "長野", "", class: "main__map__area__data__list__D__d"
+                = link_to "山梨", "", class: "main__map__area__data__list__D__d"
+              .main__map__area__data__list__E
+                北陸エリア
+                = link_to "富山", "", class: "main__map__area__data__list__E__e"
+                = link_to "石川", "", class: "main__map__area__data__list__E__e"
+                = link_to "福井", "", class: "main__map__area__data__list__E__e"
+              .main__map__area__data__list__F
+                東海エリア
+                = link_to "愛知", "", class: "main__map__area__data__list__F__f"
+                = link_to "岐阜", "", class: "main__map__area__data__list__F__f"
+                = link_to "静岡", "", class: "main__map__area__data__list__F__f"
+                = link_to "三重", "", class: "main__map__area__data__list__F__f"
+              .main__map__area__data__list__G
+                関西エリア
+                = link_to "大阪", "", class: "main__map__area__data__list__G__g"
+                = link_to "兵庫", "", class: "main__map__area__data__list__G__g"
+                = link_to "京都", "", class: "main__map__area__data__list__G__g"
+                = link_to "滋賀", "", class: "main__map__area__data__list__G__g"
+                = link_to "奈良", "", class: "main__map__area__data__list__G__g"
+                = link_to "和歌山", "", class: "main__map__area__data__list__G__g"
+              .main__map__area__data__list__H
+                中国エリア
+                = link_to "広島", "", class: "main__map__area__data__list__H__h"
+                = link_to "岡山", "", class: "main__map__area__data__list__H__h"
+                = link_to "鳥取", "", class: "main__map__area__data__list__H__h"
+                = link_to "島根", "", class: "main__map__area__data__list__H__h"
+                = link_to "山口", "", class: "main__map__area__data__list__H__h"
+              .main__map__area__data__list__I
+                四国エリア
+                = link_to "徳島", "", class: "main__map__area__data__list__I__i"
+                = link_to "香川", "", class: "main__map__area__data__list__I__i"
+                = link_to "愛媛", "", class: "main__map__area__data__list__I__i"
+                = link_to "高知", "", class: "main__map__area__data__list__I__i"
+              .main__map__area__data__list__J
+                九州エリア
+                = link_to "福岡", "", class: "main__map__area__data__list__J__j"
+                = link_to "佐賀", "", class: "main__map__area__data__list__J__j"
+                = link_to "長崎", "", class: "main__map__area__data__list__J__j"
+                = link_to "熊本", "", class: "main__map__area__data__list__J__j"
+                = link_to "大分", "", class: "main__map__area__data__list__J__j"
+                = link_to "宮崎", "", class: "main__map__area__data__list__J__j"
+                = link_to "鹿児島", "", class: "main__map__area__data__list__J__j"
+                = link_to "沖縄", "", class: "main__map__area__data__list__J__j"
+              .main__map__area__data__list__K
+                地域別に探す
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+.header
+  .header__title
+    = link_to "Harry Styles", "/"
+  .header__menu
+    =link_to "施設",""
+    -if user_signed_in?
+      =link_to new_map_path do
+        新規投稿
+      =link_to destroy_user_session_path do
+        ログアウト
+    -else
+      =link_to new_user_session_path do
+        ログイン
+      =link_to new_user_registration_path do
+        新規登録
+.new 
+  .new__form
+    .new__form__text
+      球場登録
+    = form_for @map do |f|
+      .new__map__text 都道府県を選択してください 
+      = f.select :prefecture, Map.prefectures.keys, {}, {class: 'hoge'}
+      .new__map__text 球場名を入力してください
+      = f.text_field :stadium, {class: 'hoge'}
+      = f.submit "投稿する", {class: 'new__form__text__send'}
