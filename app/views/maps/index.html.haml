@@ -1,12 +1,15 @@
 .header
   .header__title
-    Harry Styles
+    -if user_signed_in?
+      = current_user.nickname
+    -else
+      Harry_styles
   .header__menu
     =link_to "施設",""
     -if user_signed_in?
       =link_to new_map_path do
         新規投稿
-      =link_to destroy_user_session_path do
+      =link_to destroy_user_session_path, method: :delete do
         ログアウト
     -else
       =link_to new_user_session_path do

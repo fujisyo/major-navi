@@ -1,12 +1,12 @@
 .header
   .header__title
-    = link_to "Harry Styles", "/"
+    = link_to current_user.nickname, "/"
   .header__menu
     =link_to "施設",""
     -if user_signed_in?
       =link_to new_map_path do
         新規投稿
-      =link_to destroy_user_session_path do
+      =link_to destroy_user_session_path, method: :delete do
         ログアウト
     -else
       =link_to new_user_session_path do
@@ -17,6 +17,9 @@
   .new__form
     .new__form__text
       球場登録
+    -# = form_for @area,url:{action: :create} do |f|
+    -#   .new__map__text エリアを入力してください
+    -#   = f.select :area, Area.areas.keys, {}, {class: 'hoge'}
     = form_for @map do |f|
       .new__map__text 都道府県を選択してください 
       = f.select :prefecture, Map.prefectures.keys, {}, {class: 'hoge'}
